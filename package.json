@@ -1,6 +1,6 @@
 {
   "name": "buffer2digest",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "compute digest(Node.js / Web Cryptography API)",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/takanoriyanagitani/buffer2digest.git"
   },
-  "keywords": [],
+  "keywords": [
+    "crypto",
+    "digest",
+    "sha-256",
+    "sha-384",
+    "sha-512",
+    "ie11",
+    "chrome",
+    "selenium",
+    "node"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
