@@ -33,7 +33,13 @@ switch(type){
       const d = window.msCrypto.subtle.digest(algorithm)
       d.process(ab)
       d.finish()
-      callback(new Uint8Array(d.result).buffer)
+      const computed = d.result
+      console.log(computed)
+      const u3a = new Uint8Array(computed)
+      console.log(u3a)
+      const copied = u3a.buffer
+      console.log(copied)
+      callback(copied)
     }
     break
   case "browser":
