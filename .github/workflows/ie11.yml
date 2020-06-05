@@ -1,0 +1,31 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: IE11 CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, windows-2019]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: buffer2digest
+      run: |
+        $ie = New-Object -ComObject InternetExplorer.Application
+        $ie.Navigate("https://takanoriyanagitani.github.io/buffer2digest/tests/zero/index.html")
+        $cnt = 64
+        $e = "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+        while (-not $ie.LocationName -eq $e -and $cnt -gt 0){ $cnt--; sleep 1 }
+        $ie.LocationName | findstr $e
