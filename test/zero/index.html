@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <title>zero</title>
+  <script src="buffer2digest.js"></script>
+</head>
+<body>
+  <script>
+    (function(){
+      Buffer2Digest.buffer2digest("SHA-256", new ArrayBuffer(32), function(ab){
+	const u3a = new Uint8Array(ab)
+	document.title = Array.from({length: u3a.length})
+	  .map(function(v,i){ return u3a[i]+0x100 })
+	  .map(function(i){ return i.toString(16) })
+	  .map(function(s){ return s.substring(1) })
+	  .join("")
+      })
+    })()
+  </script>
+</body>
+</html>
