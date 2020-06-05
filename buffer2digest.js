@@ -31,15 +31,9 @@ switch(type){
   case "ie11":
     e.buffer2digest = function(ab, algorithm, callback){
       const d = window.msCrypto.subtle.digest(algorithm)
+      d.addEventListener("complete", function(){ callback(d.result) })
       d.process(ab)
       d.finish()
-      const computed = d.result
-      console.log(computed)
-      const u3a = new Uint8Array(computed)
-      console.log(u3a)
-      const copied = u3a.buffer
-      console.log(copied)
-      callback(copied)
     }
     break
   case "browser":
