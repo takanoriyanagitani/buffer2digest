@@ -13,15 +13,15 @@ const handle_file = (q,s, name, type="text/html; charset=UTF-8") => {
     const ng = [ err ]
       .filter(e => !! e)
       .map(_ => {
-	s.setHeader("Content-Type", "text/plain; charset=UTF-8")
-	s.statusCode = 500
-	s.end("error.")
+        s.setHeader("Content-Type", "text/plain; charset=UTF-8")
+        s.statusCode = 500
+        s.end("error.")
       })
     const ok = [ err ]
       .filter(e => ! e)
       .map(_ => {
-	s.statusCode = 200
-	s.end(data)
+        s.statusCode = 200
+        s.end(data)
       })
   })
 }
@@ -87,9 +87,9 @@ describe("chrome", () => {
     , timeout)
 
     test("zero", () => Promise.resolve(state.browser)
-      .then(b=>b.get("http://localhost:"+port+"/zero"))
+      .then(b=>b.get("https://takanoriyanagitani.github.io/buffer2digest/tests/zero/index.html"))
       .then(_=>state.browser.getTitle())
-      //.then(t=>expect(t).toBe("66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"))
+      .then(t=>expect(t).toBe("66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"))
     , timeout)
 
   })
