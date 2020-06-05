@@ -1,6 +1,6 @@
 {
   "name": "buffer2digest",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "compute digest(Node.js / Web Cryptography API)",
   "main": "buffer2digest.js",
   "scripts": {
