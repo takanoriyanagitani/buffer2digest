@@ -28,6 +28,14 @@
 })(this, function(e, type){
 switch(type){
   default: break
+  case "ie11":
+    e.buffer2digest = function(ab, algorithm, callback){
+      const d = window.msCrypto.subtle.digest(algorithm)
+      d.process(ab)
+      d.finish()
+      callback(d.result)
+    }
+    break
   case "browser":
     e.buffer2digest = function(ab, algorithm, callback){
       return window.crypto.subtle.digest(algorithm, ab)
