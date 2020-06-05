@@ -1,6 +1,6 @@
 {
   "name": "buffer2digest",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "compute digest(Node.js / Web Cryptography API)",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "node"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/takanoriyanagitani/buffer2digest/issues"
   },
