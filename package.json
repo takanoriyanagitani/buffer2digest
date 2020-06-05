@@ -1,8 +1,8 @@
 {
   "name": "buffer2digest",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "compute digest(Node.js / Web Cryptography API)",
-  "main": "index.js",
+  "main": "buffer2digest.js",
   "scripts": {
     "test": "jest",
     "jcov": "jest --coverage",
