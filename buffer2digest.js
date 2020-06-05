@@ -33,7 +33,7 @@ switch(type){
       const d = window.msCrypto.subtle.digest(algorithm)
       d.process(ab)
       d.finish()
-      callback(d.result)
+      callback(new Uint8Array(d.result).buffer)
     }
     break
   case "browser":
