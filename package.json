@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/takanoriyanagitani/buffer2digest#readme",
   "devDependencies": {
-    "chromedriver": "^83.0.0",
+    "chromedriver": "^108.0.0",
     "codecov": "^3.7.0",
     "express": "^4.17.1",
     "jest": "^26.0.1",
